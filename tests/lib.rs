@@ -30,3 +30,12 @@ fn test_fix_img_links() {
     let product = readability::extractor::extract(&mut file, &url).unwrap();
     assert_eq!(product.content, "<!DOCTYPE html><html><head><title>This is title</title></head><body><p><img src=\"https://example.com/poop.png\"></p></body></html>");
 }
+
+#[test]
+fn test_scrape() {
+    let r = readability::extractor::scrape("https://mobilematters.gg/genshin-impact/bulle-fruit")
+        .unwrap();
+
+    println!("{}", r.text);
+    panic!()
+}
