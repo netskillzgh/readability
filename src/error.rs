@@ -1,4 +1,3 @@
-#[cfg(feature = "reqwest")]
 use reqwest;
 use std::error;
 use std::fmt::{Display, Formatter, Result as FmtResult};
