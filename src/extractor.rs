@@ -3,7 +3,6 @@ use error::Error;
 use html5ever::tendril::stream::TendrilSink;
 use html5ever::{parse_document, serialize};
 use markup5ever_rcdom::{RcDom, SerializableHandle};
-#[cfg(feature = "reqwest")]
 use reqwest;
 use scorer;
 use scorer::Candidate;
@@ -12,7 +11,6 @@ use std::collections::BTreeMap;
 use std::default::Default;
 use std::io::Read;
 use std::path::Path;
-#[cfg(feature = "reqwest")]
 use std::time::Duration;
 use url::Url;
 
@@ -23,7 +21,6 @@ pub struct Product {
     pub text: String,
 }
 
-#[cfg(feature = "reqwest")]
 pub fn scrape(url: &str) -> Result<Product, Error> {
     let client = reqwest::blocking::Client::builder()
         .timeout(Duration::new(30, 0))
