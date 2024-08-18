@@ -18,7 +18,6 @@ lazy_static = "1.4.0"
 
 [dependencies.reqwest]
 reqwest = "0.11"
-optional = true
 features = ["blocking"]
 
 [features]
